@@ -1,17 +1,16 @@
 ; nasm ft_strcpy.s -o ft_strcpy.o -fmacho64 && gcc main.c ft_strcpy.o && ./a.out
+
+extern _ft_strcpy
+extern _ft_strlen
+extern malloc
+
+
 global _ft_strdup
 
 _ft_strdup:
-	mov rcx, 0
-	loop:
-			cmp byte [rsi+rcx], 0
-			je end
-			mov al, [rsi+rcx]
-			mov [rdi+rcx], al
-			inc rcx
-			jmp loop
-	end:
-			mov al, [rsi+rcx]
-			mov [rdi+rcx], al
-			mov rax, rdi
+			mv r8, rdi
+			call _ft_strlen
+			call malloc
+			mv rsi, r8
+			call _ft_strcpy
 			ret
