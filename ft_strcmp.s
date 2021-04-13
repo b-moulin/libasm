@@ -12,8 +12,16 @@ _ft_strcmp:
 			inc rcx
 			jmp loop
 		ok:
-			mov rax, 1
+			mov al, [rdi+rcx]
+			cmp byte [rsi+rcx], al
+			jne ko
+			mov rax, 0
 			ret
 		ko:
-			mov rax, 0
+			mov rax, rsi
+			cmp rax, rdi
+			ja neg
+			ret
+		neg:
+			mov rax, -1
 			ret

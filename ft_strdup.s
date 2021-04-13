@@ -2,15 +2,18 @@
 
 extern _ft_strcpy
 extern _ft_strlen
-extern malloc
+extern _malloc
 
 
 global _ft_strdup
 
 _ft_strdup:
-			mv r8, rdi
+			push rdi
 			call _ft_strlen
-			call malloc
-			mv rsi, r8
+			inc rax
+			mov rdi, rax
+			call _malloc
+			mov rdi, rax
+			pop rsi
 			call _ft_strcpy
 			ret
