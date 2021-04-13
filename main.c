@@ -1,22 +1,20 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/errno.h>
 
 // extern int ft_strlen(char *str);
 
-extern char *ft_strcpy(char *dst, char *src);
+// int ft_strlen(const char *str);
+
+// int ft_write(int fildes, const void *buf, size_t nbyte);
+
+// ssize_t	read(int fildes, void *buf, size_t nbyte);
 
 int main() {
     
-	// int c;
-	char src[4] = {'B','O','N',0};
-	char dst[4] = {'B','I','N',0};
-
-	printf("%s %s\n", src, dst);
-
-	ft_strcpy(dst, src);
-	// c = ft_strlen("BOAB");
-	// printf("c = %d\n", c);
-
-	printf("%s %s\n", src, dst);
-
+	// start(1, "BOB\n", 3);
+	int k = ft_strlen("Bonjour");
+	printf("%d\n", k);
     return 0 ;
 }

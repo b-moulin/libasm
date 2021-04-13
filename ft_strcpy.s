@@ -1,4 +1,3 @@
-[BITS 64]
 ; nasm ft_strcpy.s -o ft_strcpy.o -fmacho64 && gcc main.c ft_strcpy.o && ./a.out
 global _ft_strcpy
 

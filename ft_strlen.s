@@ -1,4 +1,3 @@
-[BITS 64]
 ; nasm ft_strlen.s -o ft_strlen.o -fmacho64 && gcc main.c ft_strlen.o && ./a.out
 
 global _ft_strlen

@@ -1,4 +1,3 @@
-[BITS 64]
 ; nasm ft_strcmp.s -o ft_strcmp.o -fmacho64 && gcc main.c ft_strcmp.o && ./a.out
 global _ft_strcmp
 
