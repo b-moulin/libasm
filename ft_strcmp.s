@@ -4,24 +4,24 @@ global _ft_strcmp
 _ft_strcmp:
 		mov rcx, 0
 		loop:
-			cmp byte [rsi+rcx], 0
-			je ok
-			mov al, [rdi+rcx]
-			cmp byte [rsi+rcx], al
+			movzx r8, byte [rdi+rcx]
+			cmp r8, 0
+			je end
+			movzx r9, byte [rsi+rcx]
+			cmp r8, r9
 			jne ko
 			inc rcx
 			jmp loop
-		ok:
-			mov al, [rdi+rcx]
-			cmp byte [rsi+rcx], al
-			jne ko
-			mov rax, 0
-			ret
+		end:
+			movzx r9, byte [rsi+rcx]
+			cmp r9, 0
+			je ok
+			jmp ko
 		ko:
-			mov rax, rsi
-			cmp rax, rdi
-			ja neg
+			mov rax, 0
+			add rax, r8
+			sub rax, r9
 			ret
-		neg:
-			mov rax, -1
+		ok:
+			mov rax, 0
 			ret

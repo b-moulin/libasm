@@ -17,10 +17,11 @@ ssize_t	ft_read(int fildes, void *buf, size_t nbyte);
 int ft_strcmp(const char *, const char *);
 
 int main() {
-	char *dst;
+	char	*str;
 
-	dst = ft_strdup("Bonjour\n");
-	printf("|%s|\n", dst);
+	str = malloc(20 + 1);
+	str[20] = 0;
+	printf("%zd\n", ft_read(-1, str, 20));
 
 	// printf("%d\n", ft_strcmp("Tripouille", "Tripouill"));
     return 0 ;
