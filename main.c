@@ -22,7 +22,10 @@ int main() {
 	str = malloc(20 + 1);
 	str[20] = 0;
 	printf("%zd\n", ft_read(-1, str, 20));
+	printf("%d\n", ft_write(1, "HEllo\n", 6));
 
-	// printf("%d\n", ft_strcmp("Tripouille", "Tripouill"));
+	printf("%d\n", ft_strcmp("ASM", "Tripouill"));
+	printf("%d\n", ft_strlen("Tripouille"));
+	printf("%d\n", ft_strcmp("Tripouille", "Tripouill"));
     return 0 ;
 }
